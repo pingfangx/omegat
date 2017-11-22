@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.main.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" />
+    </modules>
+  </component>
+</project>
