@@ -384,7 +384,15 @@ public class MatchesTextArea extends EntryInfoThreadPane<List<NearString>> imple
             int percentage = Preferences.getPreferenceDefault(Preferences.BEST_MATCH_MINIMAL_SIMILARITY,
                     Preferences.BEST_MATCH_MINIMAL_SIMILARITY_DEFAULT);
             NearString thebest = matches.get(0);
-            if (thebest.scores[0].score >= percentage) {
+            /*
+            其含义为以下 3 个，为了更准确的自动替换，改为 adjustedScore
+            此修改不应该提交，除非在设置中添加可供选择的设置
+            使用解析器插件后的匹配百分率
+            缺省的OmegaT匹配度，即忽略数字和标签后匹配词汇数除以总的词汇数
+            包含数字、标签的OmegaT匹配度
+             */
+//            if (thebest.scores[0].score >= percentage) {
+            if (thebest.scores[0].adjustedScore >= percentage) {
                 SourceTextEntry currentEntry = Core.getEditor().getCurrentEntry();
                 TMXEntry te = Core.getProject().getTranslationInfo(currentEntry);
                 if (!te.isTranslated()) {

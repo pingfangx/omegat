@@ -474,7 +474,9 @@ public class FindMatches {
     public Token[] tokenizeAll(String str) {
         // Verbatim token comparisons are intentionally case-insensitive.
         // for matching purposes.
-        str = str.toLowerCase(srcLocale);
+        //不要合并
+        //为了模糊更精确，考虑大小写
+        //str = str.toLowerCase(srcLocale);
         Token[] result = tokenizeAllCache.get(str);
         if (result == null) {
             result = tok.tokenizeVerbatim(str);

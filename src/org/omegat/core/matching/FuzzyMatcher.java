@@ -58,7 +58,14 @@ public final class FuzzyMatcher {
             boolean rightfound = (i + 1 == len) || DefaultTokenizer.isContains(sourceTokens, righttoken);
 
             Token token = matchTokens[i];
-            boolean found = DefaultTokenizer.isContains(sourceTokens, token);
+            //不要合并
+            //为了模糊更精确的显示差异，比较位置是否相同，否则如果有 a the 这样的,可能在整个句子中 contain ,会被错误地判为相同
+            //改子之后会导致不能正确表现出缺少某个词但后面相同的情况,但是该方法只在显示模糊匹配结果时才调用，不影响其他逻辑
+            //boolean found = DefaultTokenizer.isContains(sourceTokens, token);
+            boolean found = false;
+            if (i < sourceTokens.length) {
+                found = sourceTokens[i].equals(token);
+            }
 
             if (found && (!leftfound || !rightfound)) {
                 result[i] = StringData.PAIR;
