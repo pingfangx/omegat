@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TranslationInspector.jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/2502</output-path>
+    <root id="archive" name="TranslationInspector.jar">
+      <element id="module-output" name="OmegaT.plugin_TranslationInspector.main" />
+    </root>
+  </artifact>
+</component>

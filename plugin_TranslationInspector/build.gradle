@@ -1,0 +1,20 @@
+version '1.2.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //词库检查需要引用 OmegaT 相关方法
+    compile rootProject
+    //不知为何有时总是引用不到，可能是自己不太理解
+    testCompile sourceSets.main.output
+}

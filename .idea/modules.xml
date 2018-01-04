@@ -4,6 +4,18 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.main.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaiduTranslatorX/OmegaT.plugin_BaiduTranslatorX.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_BaseTranslatorX/OmegaT.plugin_BaseTranslatorX.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_GoogleTranslatorX/OmegaT.plugin_GoogleTranslatorX.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" />
     </modules>

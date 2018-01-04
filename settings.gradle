@@ -1,1 +1,6 @@
 rootProject.name = 'OmegaT'
+include ':plugin_BaiduTranslatorX'
+include ':plugin_BaseTranslatorX'
+include ':plugin_GoogleTranslatorX'
+include ':plugin_TranslationInspector'
+

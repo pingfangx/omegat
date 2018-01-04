@@ -3,6 +3,14 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="OmegaT.main" target="1.8" />
+      <module name="OmegaT.plugin_BaiduTranslatorX.main" target="1.8" />
+      <module name="OmegaT.plugin_BaiduTranslatorX.test" target="1.8" />
+      <module name="OmegaT.plugin_BaseTranslatorX.main" target="1.8" />
+      <module name="OmegaT.plugin_BaseTranslatorX.test" target="1.8" />
+      <module name="OmegaT.plugin_GoogleTranslatorX.main" target="1.8" />
+      <module name="OmegaT.plugin_GoogleTranslatorX.test" target="1.8" />
+      <module name="OmegaT.plugin_TranslationInspector.main" target="1.8" />
+      <module name="OmegaT.plugin_TranslationInspector.test" target="1.8" />
       <module name="OmegaT.test" target="1.8" />
       <module name="OmegaT.testIntegration" target="1.8" />
     </bytecodeTargetLevel>

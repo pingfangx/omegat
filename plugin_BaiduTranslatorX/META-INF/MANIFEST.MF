@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OmegaT-Plugin: true
+
+Name: com.pingfangx.omegat.plugin.BaiduTranslatorX
+OmegaT-Plugin: MachineTranslator
