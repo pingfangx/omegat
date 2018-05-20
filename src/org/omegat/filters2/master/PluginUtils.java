@@ -33,6 +33,7 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -83,7 +84,8 @@ public final class PluginUtils {
      * than one jar.
      */
     public static void loadPlugins(final Map<String, String> params) {
-        File pluginsDir = new File(StaticUtils.installDir(), "plugins");
+//        File pluginsDir = new File(StaticUtils.installDir(), "plugins");
+        File pluginsDir = Paths.get("classes/artifacts").toAbsolutePath().toFile();
         File homePluginsDir = new File(StaticUtils.getConfigDir(), "plugins");
         try {
             // list all jars in /plugins/

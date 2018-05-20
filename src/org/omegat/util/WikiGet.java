@@ -275,7 +275,7 @@ public final class WikiGet {
                 }
             }
 
-            addProxyAuthentication(conn);
+//            addProxyAuthentication(conn);
 
             conn.setDoOutput(true);
 
@@ -323,7 +323,7 @@ public final class WikiGet {
             }
         }
 
-        addProxyAuthentication(conn);
+//        addProxyAuthentication(conn);
 
         conn.setDoInput(true);
         conn.setDoOutput(true);
