@@ -66,6 +66,9 @@ sourceSets {
 }
 
 repositories {
+    maven{
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
     jcenter()
     maven {
         url 'https://dl.bintray.com/omegat-org/maven'
@@ -307,6 +310,9 @@ distributions {
                 filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('crlf'))
             }
             from('release/plugins-specific') {
+                into 'plugins'
+            }
+            from('classes/artifacts') {
                 into 'plugins'
             }
             from('release/linux-specific') {
@@ -750,6 +756,7 @@ allprojects {
         failOnError = false
     }
     tasks.withType(JavaCompile) {
+       options.encoding = "UTF-8"
        options.compilerArgs.addAll '-Xlint', '-Werror'
     }
 }
