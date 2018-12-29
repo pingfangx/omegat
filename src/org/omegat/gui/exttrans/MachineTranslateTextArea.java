@@ -30,9 +30,10 @@
 package org.omegat.gui.exttrans;
 
 import java.awt.Dimension;
-import java.util.HashSet;
+
+import java.util.List;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -72,7 +73,11 @@ public class MachineTranslateTextArea extends EntryInfoThreadPane<MachineTransla
 
     private static final String EXPLANATION = OStrings.getString("GUI_MACHINETRANSLATESWINDOW_explanation");
 
-    protected Set<MachineTranslationInfo> displayed = new HashSet<>();
+    /**
+     * 如果获取了 iterator，可能会获取到谷歌翻译，因为要插入到 0 ，下次调用 next 时会诱发 ConcurrentModificationException
+     * 所以使用 CopyOnWriteArrayList
+     */
+    protected List<MachineTranslationInfo> displayed = new CopyOnWriteArrayList<>();
 
     public MachineTranslateTextArea(IMainWindow mw) {
         super(true);
@@ -139,8 +144,15 @@ public class MachineTranslateTextArea extends EntryInfoThreadPane<MachineTransla
         UIThreadsUtil.mustBeSwingThread();
 
         if (data != null && data.result != null) {
-            displayed.add (data);
-            setText(getText() + data.result + "\n<" + data.translatorName + ">\n\n");
+            if (data.translatorName.equals("谷歌翻译X")) {
+                //如果是谷歌翻译，将其插到开头
+                displayed.add(0, data);
+                //提到最前,如果 getText()为空,会保留 2 个回车,如果不为空,也会包含其之前设置的 2 个回车
+                setText(data.result + "\n<" + data.translatorName + ">\n\n" + getText());
+            } else {
+                displayed.add(data);
+                setText(getText() + data.result + "\n<" + data.translatorName + ">\n\n");
+            }
         }
     }
 
