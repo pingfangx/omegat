@@ -423,4 +423,23 @@ public final class HTMLUtils {
         }
         return contents;
     }
+
+    /**
+     * 解析泛型
+     * 因为在翻译泛型时存在以下情况
+     * <?>
+     * <? super *>
+     * <? extends *>
+     * Map<? super T,? extends R>
+     * 在调用 charsToEntities 时，因为 <? 是 processing instruction 导致未被转义，于是添加一个转义方法
+     */
+    public static String parseGenerics(String str) {
+        str = str.replace("<?>", "&lt;?&gt;");
+        /*
+        < 开头
+        后跟 ?
+        ? 后跟 super 或 extends
+         */
+        return str.replaceAll("<\\?(\\s+(super|extends)\\s+)", "&lt;?$1");
+    }
 }

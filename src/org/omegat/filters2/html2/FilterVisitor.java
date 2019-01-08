@@ -631,6 +631,7 @@ public class FilterVisitor extends NodeVisitor {
         // converting & < and > into &amp; &lt; and &gt; respectively
         // note that this doesn't change < and > of tag shortcuts
         translation = HTMLUtils.charsToEntities(translation, filter.getTargetEncoding(), sShortcuts);
+        translation = HTMLUtils.parseGenerics(translation);
         // expands tag shortcuts into full-blown tags
         translation = unshorcutize(translation);
         // writing out the paragraph into target file
