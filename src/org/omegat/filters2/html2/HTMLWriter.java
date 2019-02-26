@@ -89,7 +89,7 @@ public class HTMLWriter extends Writer {
         this.options = options;
 
         writer = new StringWriter();
-        FileOutputStream fos = new FileOutputStream(fileName);
+        FileOutputStream fos = new FileOutputStream(paresFileName(fileName));
 
         OutputStreamWriter osw;
         if (encoding != null) {
@@ -183,7 +183,7 @@ public class HTMLWriter extends Writer {
                 }
             }
 
-            realWriter.write(contents);
+            realWriter.write(parseContentForFinalWrite(contents));
             buffer.setLength(0);
         }
     }
@@ -207,5 +207,19 @@ public class HTMLWriter extends Writer {
         if (writer.getBuffer().length() >= MAX_BUFFER_SIZE) {
             flush();
         }
+    }
+
+    /**
+     * 解析文件，用于输出
+     */
+    protected String paresFileName(String fileName) {
+        return fileName;
+    }
+
+    /**
+     * 解析内容用于最终写入
+     */
+    protected String parseContentForFinalWrite(String contents) {
+        return contents;
     }
 }

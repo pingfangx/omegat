@@ -44,6 +44,8 @@ import org.htmlparser.util.ParserException;
 import org.omegat.filters2.AbstractFilter;
 import org.omegat.filters2.Instance;
 import org.omegat.filters2.TranslationException;
+import org.omegat.filters2.html2.tip.TipBufferedWriter;
+import org.omegat.filters2.html2.tip.TipHTMLWriter;
 import org.omegat.util.Log;
 import org.omegat.util.OStrings;
 import org.omegat.util.StringUtil;
@@ -122,13 +124,16 @@ public class HTMLFilter2 extends AbstractFilter {
         } else {
             this.targetEncoding = encoding;
         }
-        hwriter = new HTMLWriter(outfile.getAbsolutePath(), this.targetEncoding, options);
-        return new BufferedWriter(hwriter);
+        hwriter = new TipHTMLWriter(outfile.getAbsolutePath(), this.targetEncoding, options);
+        return new TipBufferedWriter(hwriter);
     }
 
     @Override
     public void processFile(BufferedReader infile, BufferedWriter outfile,
             org.omegat.filters2.FilterContext fc) throws IOException, TranslationException {
+        if (outfile instanceof TipBufferedWriter) {
+            ((TipBufferedWriter) outfile).onProcessFile(this);
+        }
         StringBuilder all = null;
         try {
             all = new StringBuilder();
