@@ -1,6 +1,7 @@
 package com.pingfangx.omegat.plugin.inspector.sub;
 
 import com.pingfangx.omegat.plugin.inspector.BaseInspector;
+import com.pingfangx.omegat.plugin.inspector.util.PatternConstants;
 
 /**
  * 保留的标点符号，不需要替换
@@ -12,12 +13,12 @@ public class KeepSymbolInspector extends BaseInspector {
     /**
      * 保留的英文符号
      */
-    private final String[] keepEnSymbols = new String[]{"...", "--"};
+    private final String[] keepEnSymbols = new String[]{PatternConstants.EN_ELLIPSIS, "--"};
     /**
      * 错误替换的中文符号
      * 替换时先替换两个，再替换一个，所以单个符号即可
      */
-    private final String[] errorReplacedCnSymbols = new String[]{"…", "—"};
+    private final String[] errorReplacedCnSymbols = new String[]{PatternConstants.CN_ELLIPSIS, "—"};
 
     @Override
     public String inspect(String en, String cn) {

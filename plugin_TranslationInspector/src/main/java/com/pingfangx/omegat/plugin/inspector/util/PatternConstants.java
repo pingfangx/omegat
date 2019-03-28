@@ -37,6 +37,15 @@ public class PatternConstants {
     public static final String[] CN_SYMBOLS = new String[]{"，", "。", "！", "？", "：", "；"};
 
     /**
+     * 英文省略号
+     */
+    public static final String EN_ELLIPSIS = "...";
+    /**
+     * 中文省略号
+     */
+    public static final String CN_ELLIPSIS = "…";
+
+    /**
      * OmegaT 解析的 i 标签
      */
     public static final Pattern ITALIC_TAG_PATTERN = Pattern.compile("^i\\d+$");

@@ -19,6 +19,10 @@ public class ReplaceEndSymbolInspector extends BaseInspector {
         for (int i = 0; i < PatternConstants.EN_SYMBOLS.length; i++) {
             String enSymbol = PatternConstants.EN_SYMBOLS[i];
             if (en.endsWith(enSymbol)) {
+                if (en.endsWith(PatternConstants.EN_ELLIPSIS)) {
+                    //省略号不处理
+                    continue;
+                }
                 //以某一英文字符结尾
                 String cnSymbol = PatternConstants.CN_SYMBOLS[i];
                 if (cn.endsWith(enSymbol)) {

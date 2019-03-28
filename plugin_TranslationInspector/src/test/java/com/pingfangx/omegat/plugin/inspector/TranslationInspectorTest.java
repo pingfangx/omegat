@@ -15,6 +15,6 @@ public class TranslationInspectorTest extends BaseInspectorTest {
 
     @Override
     protected void addTestCase(List<String[]> testCaseList) {
-
+        testCaseList.add(new String[]{"test...", "测试…", "测试..."});
     }
 }

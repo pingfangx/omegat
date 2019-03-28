@@ -28,5 +28,7 @@ public class ReplaceSymbolInspectorTest extends BaseInspectorTest {
         String enSymbol = enSymbols[0];
         String cnSymbol = cnSymbols[0];
         testCaseList.add(new String[]{"test" + enSymbol + "test" + enSymbol + "test", "测试" + enSymbol + "测" + enSymbol + "测试", "测试" + cnSymbol + "测" + cnSymbol + "测试"});
+        //测试省略号不替换
+        testCaseList.add(new String[]{"test...", "测试...", "测试..."});
     }
 }

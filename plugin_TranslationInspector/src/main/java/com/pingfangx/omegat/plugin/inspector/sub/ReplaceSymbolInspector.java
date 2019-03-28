@@ -18,7 +18,8 @@ public class ReplaceSymbolInspector extends ReplaceEndSymbolInspector {
             String enSymbol = PatternConstants.EN_SYMBOLS[i];
             enSymbol = enSymbol.replace(".", "\\.");
             enSymbol = enSymbol.replace("?", "\\?");
-            Pattern pattern = Pattern.compile(String.format("(%s)%s", PatternConstants.CHINESE_REGEX, enSymbol));
+            //后面不跟标点符号，表示不能是多个相连（如省略号...）
+            Pattern pattern = Pattern.compile(String.format("(%1$s)%2$s(?!%2$s)", PatternConstants.CHINESE_REGEX, enSymbol));
             Matcher matcher = pattern.matcher(cn);
             if (matcher.find()) {
                 cn = matcher.replaceAll("$1" + PatternConstants.CN_SYMBOLS[i]);

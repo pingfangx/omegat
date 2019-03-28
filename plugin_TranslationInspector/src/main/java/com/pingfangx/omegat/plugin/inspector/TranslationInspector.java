@@ -46,9 +46,9 @@ public class TranslationInspector extends BaseInspector {
         //破折号
         addInspector(new ReplaceSpecialDashInspector());
         //标点符号
+        addInspector(new KeepSymbolInspector());
         addInspector(new ReplaceSymbolInspector());
         addInspector(new ReplaceEndSymbolInspector());
-        addInspector(new KeepSymbolInspector());
         addInspector(new RemoveChineseSymbolSurroundedSpaceInspector());
         //移除标签周围的空格
         addInspector(new RemoveTagSpaceInspector());
