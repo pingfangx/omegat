@@ -16,12 +16,17 @@ public class KeepParenthesesInspector extends BaseInspector {
     public String inspect(String en, String cn) {
         //如果本身带中文括号则不替换
         int enCount = StringUtils.countMatches(en, "(") + StringUtils.countMatches(en, ")");
-        //查找中文的时候，统一已翻译为中文的和保留英文的数量
-        int cnCount = StringUtils.countMatches(cn, "（")
-                + StringUtils.countMatches(cn, "）")
-                + StringUtils.countMatches(cn, "(")
-                + StringUtils.countMatches(cn, ")");
-        if (enCount == cnCount) {
+        boolean replace = enCount == 0;
+        if (!replace) {
+            //查找中文的时候，统一已翻译为中文的和保留英文的数量
+            int cnCount = StringUtils.countMatches(cn, "（")
+                    + StringUtils.countMatches(cn, "）")
+                    + StringUtils.countMatches(cn, "(")
+                    + StringUtils.countMatches(cn, ")");
+            replace = enCount == cnCount;
+        }
+        //如果英文中没有括号，中文认为是添加的，也替换为英文的好了
+        if (replace) {
             cn = cn.replace("（", "(").replace("）", ")");
         }
         return cn;
