@@ -21,5 +21,6 @@ public class KeepSymbolInspectorTest extends BaseInspectorTest {
         testCaseList.add(new String[]{"test...", "测试…", "测试..."});
         testCaseList.add(new String[]{"test...", "测试……", "测试..."});
         testCaseList.add(new String[]{"test...--test", "测试……——测试", "测试...--测试"});
+        testCaseList.add(new String[]{"test...", "测试......", "测试..."});
     }
 }

@@ -26,6 +26,13 @@ public class KeepSymbolInspector extends BaseInspector {
             String keepEnSymbol = keepEnSymbols[i];
             if (en.contains(keepEnSymbol)) {
                 //包含英文符号
+                String doubleEllipsis = PatternConstants.EN_ELLIPSIS + PatternConstants.EN_ELLIPSIS;
+                if (en.endsWith(PatternConstants.EN_ELLIPSIS) && !en.endsWith(doubleEllipsis)) {
+                    //如果英文以单个省略号结尾，但中文却以两个省略号结尾
+                    if (cn.endsWith(doubleEllipsis)) {
+                        cn = cn.replace(doubleEllipsis, PatternConstants.EN_ELLIPSIS);
+                    }
+                }
                 String cnSymbol = errorReplacedCnSymbols[i];
                 if (cn.contains(cnSymbol)) {
                     //中文中包含，将其替换
