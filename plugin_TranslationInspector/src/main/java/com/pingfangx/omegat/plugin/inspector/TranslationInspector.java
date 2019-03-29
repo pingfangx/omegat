@@ -57,6 +57,8 @@ public class TranslationInspector extends BaseInspector {
         //addInspector(new KeepOmegaTTagInspector());
         //移除符号周围的空格，放到移除标签周围的空格之后
         addInspector(new RemoveSymbolSurroundedSpaceInspector());
+        //移除未翻译标签的空格
+        addInspector(new RemoveUntranslatedTagSpaceInspector());
         //空格
         addInspector(new AddSpaceInspector());
     }

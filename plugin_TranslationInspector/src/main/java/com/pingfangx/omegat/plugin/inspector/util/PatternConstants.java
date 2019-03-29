@@ -67,6 +67,11 @@ public class PatternConstants {
     public static final Pattern TAG_SURROUNDED_SPACE_PATTERN = Pattern.compile(String.format("<%1$s/?%1$s\\w%1$s\\d+%1$s>", SPACE_REGEX));
 
     /**
+     * 未翻译的标签，则不需要添加空格
+     */
+    public static final Pattern UNTRANSLATED_TAG_PATTERN = Pattern.compile(String.format("<(\\w+)>%1$s(.+?)%1$s</\\1>", SPACE_REGEX));
+
+    /**
      * 敬语匹配
      */
     public static final Pattern HONORIFICS_PATTERN = Pattern.compile("你(?!们)");
