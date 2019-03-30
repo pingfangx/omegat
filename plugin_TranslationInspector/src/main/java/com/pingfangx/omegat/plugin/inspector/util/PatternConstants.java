@@ -22,6 +22,10 @@ public class PatternConstants {
      */
     public static final String TAG_REGEX = "</?\\w\\d+>";
     /**
+     * 标签
+     */
+    public static final Pattern TAG_PATTERN = Pattern.compile(TAG_REGEX);
+    /**
      * 空格
      */
     public static final String SPACE_REGEX = "\\s*";

@@ -61,6 +61,9 @@ public class TranslationInspector extends BaseInspector {
         addInspector(new RemoveUntranslatedTagSpaceInspector());
         //空格
         addInspector(new AddSpaceInspector());
+
+        //以下为警告
+        addInspector(new WarningMissingTagInspector());
     }
 
     /**
