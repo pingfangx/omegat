@@ -83,4 +83,9 @@ public class PatternConstants {
      * 敬语替换内容
      */
     public static final String HONORIFICS_REPLACEMENT = "您";
+
+    /**
+     * & 形式的快捷键，前面不带 \\
+     */
+    public static final Pattern AND_SHORTCUT_PATTERN = Pattern.compile("(?<!\\\\)&(\\w)");
 }

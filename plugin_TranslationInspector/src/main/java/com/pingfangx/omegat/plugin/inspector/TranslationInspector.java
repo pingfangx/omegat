@@ -64,6 +64,7 @@ public class TranslationInspector extends BaseInspector {
 
         //以下为警告
         addInspector(new WarningMissingTagInspector());
+        addInspector(new WarningShortcutInspector());
     }
 
     /**
