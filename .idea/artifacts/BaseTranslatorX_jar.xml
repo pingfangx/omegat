@@ -4,12 +4,6 @@
     <root id="root">
       <element id="archive" name="BaseTranslatorX.jar">
         <element id="module-output" name="OmegaT.plugin_BaseTranslatorX.main" />
-        <element id="directory" name="lib">
-          <element id="file-copy" path="$PROJECT_DIR$/plugin_BaseTranslatorX/src/main/resources/lib/translation_inspection.py" />
-        </element>
-      </element>
-      <element id="directory" name="BaseTranslatorX_lib">
-        <element id="library" level="project" name="Gradle: org.python:jython-standalone:2.7.1" />
       </element>
     </root>
   </artifact>
