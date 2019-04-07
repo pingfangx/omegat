@@ -18,7 +18,14 @@ public class AssembleItalicTagInspector extends KeepOmegaTTagInspector {
     @Override
     protected String getReplaceContent(Matcher enMatcher, Matcher cnMatcher, String tag) {
         if (PatternConstants.ITALIC_TAG_PATTERN.matcher(tag).matches()) {
-            return String.format("%s (%s)", enMatcher.group(2), cnMatcher.group(2));
+            String enTag = enMatcher.group(2);
+            String cnTag = cnMatcher.group(2);
+            if (enTag.trim().equalsIgnoreCase(cnTag.trim())) {
+                //如果相等，则返回英文的即可
+                return enTag;
+            } else {
+                return String.format("%s (%s)", enTag, cnTag);
+            }
         } else {
             return super.getReplaceContent(enMatcher, cnMatcher, tag);
         }
