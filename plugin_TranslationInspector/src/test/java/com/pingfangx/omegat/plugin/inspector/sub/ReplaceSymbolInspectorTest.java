@@ -30,5 +30,7 @@ public class ReplaceSymbolInspectorTest extends BaseInspectorTest {
         testCaseList.add(new String[]{"test" + enSymbol + "test" + enSymbol + "test", "测试" + enSymbol + "测" + enSymbol + "测试", "测试" + cnSymbol + "测" + cnSymbol + "测试"});
         //测试省略号不替换
         testCaseList.add(new String[]{"test...", "测试...", "测试..."});
+        //测试在英文中标点符号符号前有空格就不替换
+        testCaseList.add(new String[]{"test ignore .class files.", "测试忽略.class文件.", "测试忽略 .class文件."});
     }
 }
