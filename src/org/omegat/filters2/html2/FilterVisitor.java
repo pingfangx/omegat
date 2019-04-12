@@ -30,26 +30,18 @@
 
 package org.omegat.filters2.html2;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.Vector;
-import java.util.regex.Matcher;
-
-import org.htmlparser.Attribute;
-import org.htmlparser.Node;
-import org.htmlparser.Remark;
-import org.htmlparser.Tag;
-import org.htmlparser.Text;
+import org.htmlparser.*;
 import org.htmlparser.nodes.TextNode;
 import org.htmlparser.visitors.NodeVisitor;
 import org.omegat.core.Core;
 import org.omegat.util.OStrings;
 import org.omegat.util.PatternConsts;
 import org.omegat.util.StringUtil;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.Matcher;
 
 /**
  * The part of HTML filter that actually does the job. This class is called back
@@ -398,7 +390,7 @@ public class FilterVisitor extends NodeVisitor {
                 || tagname.equals("SCRIPT")
                 || tagname.equals("OBJECT")
                 || tagname.equals("EMBED")
-                || (tagname.equals("META") && "content-type".equalsIgnoreCase(tag.getAttribute("http-equiv")));
+                || tagname.equals("META");
     }
 
     /** Is the tag space-preserving? */

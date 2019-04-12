@@ -27,28 +27,25 @@
 
 package org.omegat.filters2.html2;
 
-import java.awt.Window;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-
 import org.htmlparser.Parser;
 import org.htmlparser.util.ParserException;
 import org.omegat.filters2.AbstractFilter;
 import org.omegat.filters2.Instance;
 import org.omegat.filters2.TranslationException;
+import org.omegat.filters2.html2.tag.TagUtils;
 import org.omegat.filters2.html2.tip.TipBufferedWriter;
 import org.omegat.filters2.html2.tip.TipHTMLWriter;
 import org.omegat.util.Log;
 import org.omegat.util.OStrings;
 import org.omegat.util.StringUtil;
+
+import java.awt.*;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 /**
  * A filter to translate HTML and XHTML files.
@@ -180,6 +177,7 @@ public class HTMLFilter2 extends AbstractFilter {
         }
 
         Parser parser = new Parser();
+        TagUtils.registerTag(parser);
         try {
             parser.setInputHTML(all.toString());
             parser.visitAllNodesWith(new FilterVisitor(this, outfile, options));
