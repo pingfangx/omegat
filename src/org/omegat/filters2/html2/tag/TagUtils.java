@@ -16,7 +16,9 @@ public class TagUtils {
     public static void registerTag(Parser parser) {
         NodeFactory nodeFactory = parser.getNodeFactory();
         if (nodeFactory instanceof PrototypicalNodeFactory) {
-            ((PrototypicalNodeFactory) nodeFactory).registerTag(new CodeTag());
+            PrototypicalNodeFactory prototypicalNodeFactory = (PrototypicalNodeFactory) nodeFactory;
+            prototypicalNodeFactory.registerTag(new CodeTag());
+            prototypicalNodeFactory.registerTag(new PreTag());
         }
     }
 }
