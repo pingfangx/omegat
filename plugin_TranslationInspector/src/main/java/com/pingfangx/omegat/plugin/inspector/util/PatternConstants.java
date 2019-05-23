@@ -51,8 +51,9 @@ public class PatternConstants {
 
     /**
      * OmegaT 解析的 i 标签
+     * 后续发现部分文件中使用 em 标签
      */
-    public static final Pattern ITALIC_TAG_PATTERN = Pattern.compile("^i\\d+$");
+    public static final Pattern ITALIC_TAG_PATTERN = Pattern.compile("^[ie]\\d+$");
     /**
      * OmegaT 解析的成对标签
      * 因为标签翻译时可能大小写混乱，所以忽略大小写
