@@ -11,6 +11,8 @@
       <module name="OmegaT.plugin_GoogleTranslatorX.test" target="1.8" />
       <module name="OmegaT.plugin_TranslationInspector.main" target="1.8" />
       <module name="OmegaT.plugin_TranslationInspector.test" target="1.8" />
+      <module name="OmegaT.plugin_YoudaoTranslatorX.main" target="1.8" />
+      <module name="OmegaT.plugin_YoudaoTranslatorX.test" target="1.8" />
       <module name="OmegaT.test" target="1.8" />
       <module name="OmegaT.testIntegration" target="1.8" />
     </bytecodeTargetLevel>

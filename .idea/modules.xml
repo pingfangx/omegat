@@ -16,8 +16,12 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_TranslationInspector/OmegaT.plugin_TranslationInspector.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.test.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX/OmegaT.plugin_YoudaoTranslatorX.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" filepath="$PROJECT_DIR$/.idea/modules/OmegaT.testIntegration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin_YoudaoTranslatorX.iml" />
     </modules>
   </component>
 </project>

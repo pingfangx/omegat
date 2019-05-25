@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="YoudaoTranslatorX.jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/2502</output-path>
+    <root id="root">
+      <element id="archive" name="YoudaoTranslatorX.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/plugin_YoudaoTranslatorX/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="OmegaT.plugin_YoudaoTranslatorX.main" />
+      </element>
+    </root>
+  </artifact>
+</component>
