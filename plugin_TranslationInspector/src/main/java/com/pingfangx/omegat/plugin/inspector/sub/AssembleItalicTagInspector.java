@@ -20,8 +20,9 @@ public class AssembleItalicTagInspector extends KeepOmegaTTagInspector {
         if (PatternConstants.ITALIC_TAG_PATTERN.matcher(tag).matches()) {
             String enTag = enMatcher.group(2);
             String cnTag = cnMatcher.group(2);
-            if (enTag.trim().equalsIgnoreCase(cnTag.trim())) {
+            if (enTag.replace(" ", "").equalsIgnoreCase(cnTag.replace(" ", ""))) {
                 //如果相等，则返回英文的即可
+                //因为可能有空格的影响，判断时直接忽略空格
                 return enTag;
             } else {
                 return String.format("%s (%s)", enTag, cnTag);

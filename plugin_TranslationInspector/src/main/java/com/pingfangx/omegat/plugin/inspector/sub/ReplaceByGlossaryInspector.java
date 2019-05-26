@@ -101,8 +101,15 @@ public class ReplaceByGlossaryInspector extends BaseInspector {
                 if (StringUtil.isEmpty(comment)) {
                     continue;
                 }
-                if (cn.contains(comment)) {
-                    //包含不适用的翻译
+                //包含不适用的翻译
+                boolean replace = cn.contains(comment);
+                if (!comment.contains(firstCnWord)) {
+                    //如果不使用的翻译不包含要使用的翻译，那么如果中文中已经有正确的翻译了，就不替换
+                    //避免可能包含正确的翻译，但恰好存在另一个词语，其翻译为不适用的词
+                    //比如 test experiment 测试实验，不能因为包含实验就替换，而是包含测试就不再替换
+                    replace &= !cn.contains(firstCnWord);
+                }
+                if (replace) {
                     System.out.println(String.format("术语检查：\n【%s】\n【%s】→【%s】", cn, comment, firstCnWord));
                     cn = cn.replace(comment, firstCnWord);
                     hasTranslation = true;
