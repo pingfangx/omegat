@@ -22,8 +22,7 @@ public class BaiduTransApi {
         try {
             return WikiGet.get(TRANS_API_HOST, params, null);
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            return BaseTranslatorUtils.processException(e);
         }
     }
 

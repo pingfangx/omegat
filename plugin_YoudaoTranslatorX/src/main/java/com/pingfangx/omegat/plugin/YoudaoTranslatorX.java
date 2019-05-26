@@ -26,7 +26,7 @@ public class YoudaoTranslatorX extends BaseTranslatorX {
         try {
             return WikiGet.post(url, params, headers);
         } catch (IOException e) {
-            return e.getLocalizedMessage();
+            return BaseTranslatorUtils.processException(e);
         }
     }
 
@@ -43,9 +43,8 @@ public class YoudaoTranslatorX extends BaseTranslatorX {
             Map<String, String> translationNode = (Map<String, String>) translationsList.get(0);
             return translationNode.get("tgt");
         } catch (Exception e) {
-            e.printStackTrace();
+            return BaseTranslatorUtils.processException(e);
         }
-        return null;
     }
 
     @Override

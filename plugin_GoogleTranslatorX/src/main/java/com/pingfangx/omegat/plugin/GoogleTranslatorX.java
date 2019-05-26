@@ -42,7 +42,7 @@ public class GoogleTranslatorX extends BaseTranslatorX {
             headers.put("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6");
             return WikiGet.post(url, null, headers);
         } catch (IOException e) {
-            return e.getLocalizedMessage();
+            return BaseTranslatorUtils.processException(e);
         }
     }
 
@@ -71,10 +71,10 @@ public class GoogleTranslatorX extends BaseTranslatorX {
                     translation.append(translationValue.get(0));
                 }
             }
+            return translation.toString();
         } catch (Exception e) {
-            e.printStackTrace();
+            return BaseTranslatorUtils.processException(e);
         }
-        return translation.toString();
     }
 
     @SuppressWarnings("unused")

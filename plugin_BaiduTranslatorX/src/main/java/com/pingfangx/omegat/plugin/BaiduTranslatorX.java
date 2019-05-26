@@ -58,9 +58,8 @@ public class BaiduTranslatorX extends BaseTranslatorX {
             Map<String, String> translationNode = (Map<String, String>) translationsList.get(0);
             return translationNode.get("dst");
         } catch (Exception e) {
-            e.printStackTrace();
+            return BaseTranslatorUtils.processException(e);
         }
-        return null;
     }
 
     @Override

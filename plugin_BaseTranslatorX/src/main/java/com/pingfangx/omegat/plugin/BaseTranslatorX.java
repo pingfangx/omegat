@@ -41,7 +41,13 @@ public abstract class BaseTranslatorX extends BaseTranslate {
      */
     public static String inspect(String en, String cn) {
         // java 实现的检查
-        return TranslationInspector.getsInstance().inspect(en, cn);
+        try {
+            return TranslationInspector.getsInstance().inspect(en, cn);
+        } catch (Exception e) {
+            BaseTranslatorUtils.processException(e);
+            //如果有异常，比如未找到类，则直接原样返回
+            return cn;
+        }
     }
 
     /**
