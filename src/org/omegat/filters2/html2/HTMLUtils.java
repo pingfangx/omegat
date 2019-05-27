@@ -440,6 +440,6 @@ public final class HTMLUtils {
         后跟 ?
         ? 后跟 super 或 extends
          */
-        return str.replaceAll("<\\?(\\s+(super|extends)\\s+)", "&lt;?$1");
+        return str.replaceAll("<\\?(\\s+(<b\\d>)?(super|extends)\\s*)", "&lt;?$1");
     }
 }
