@@ -99,4 +99,14 @@ public class PatternConstants {
      * 特殊连字符的错误翻译，前后空格可有可无
      */
     public static final Pattern SPECIAL_HYPHEN_PATTERN_CN = Pattern.compile("\\s?\\?{2}\\s?");
+
+    /**
+     * Unicode 代码点，前后空格可有可无
+     */
+    public static final Pattern UNICODE_POINT_PATTERN = Pattern.compile("(U)\\s?(\\+)\\s?([0-9a-fA-F]{4,6})");
+
+    /**
+     * Unicode 代码点替换
+     */
+    public static final String UNICODE_POINT_REPLACEMENT = "$1$2$3";
 }
