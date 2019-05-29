@@ -16,7 +16,7 @@ public class PatternConstants {
     /**
      * 英文，需要与中文间添加空格的内容
      */
-    public static final String ENGLISH_REGEX = "[A-Za-z0-9\\[\\]%<>{}']";
+    public static final String ENGLISH_REGEX = "[A-Za-z0-9\\[\\]%<>{}'™]";
     /**
      * 标签
      */
