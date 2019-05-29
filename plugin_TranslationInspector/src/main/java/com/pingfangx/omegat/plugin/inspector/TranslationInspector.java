@@ -60,6 +60,9 @@ public class TranslationInspector extends BaseInspector {
         //空格
         addInspector(new AddSpaceInspector());
 
+        //特殊连字符，放于添加空格后
+        addInspector(new KeepSpecialHyphenInspector());
+
         //术语，放到最后，因为可能标签中有文字，让前面的检查器处理完再进行替换
         addInspector(ReplaceByGlossaryInspector.getInstance());
 

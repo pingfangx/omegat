@@ -89,4 +89,14 @@ public class PatternConstants {
      * & 形式的快捷键，前面不带 \\
      */
     public static final Pattern AND_SHORTCUT_PATTERN = Pattern.compile("(?<!\\\\)&(\\w)");
+
+    /**
+     * 特殊连字符，前后空格
+     */
+    public static final String SPECIAL_HYPHEN = " \u0096 ";
+
+    /**
+     * 特殊连字符的错误翻译，前后空格可有可无
+     */
+    public static final Pattern SPECIAL_HYPHEN_PATTERN_CN = Pattern.compile("\\s?\\?{2}\\s?");
 }

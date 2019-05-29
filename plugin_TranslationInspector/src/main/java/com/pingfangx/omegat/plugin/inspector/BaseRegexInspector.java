@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  */
 public class BaseRegexInspector extends BaseInspector {
     protected final Pattern pattern;
-    private final String replacement;
+    protected final String replacement;
 
     public BaseRegexInspector(Pattern pattern) {
         this(pattern, null);
