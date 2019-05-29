@@ -102,11 +102,13 @@ public class PatternConstants {
 
     /**
      * Unicode 代码点，前后空格可有可无
+     * U+0000-U+10FFFFFF
      */
-    public static final Pattern UNICODE_POINT_PATTERN = Pattern.compile("(U)\\s?(\\+)\\s?([0-9a-fA-F]{4,6})");
+    public static final Pattern UNICODE_POINT_PATTERN = Pattern.compile("\\s?(U)(\\+)([0-9a-fA-F]{4,6})\\s?");
 
     /**
-     * Unicode 代码点替换
+     * Unicode 字符
+     * \u0000-\uFFFF
      */
-    public static final String UNICODE_POINT_REPLACEMENT = "$1$2$3";
+    public static final Pattern UNICODE_CHARACTER_PATTERN = Pattern.compile("\\s?(\\\\)(u)([0-9a-fA-F]{4})\\s?");
 }

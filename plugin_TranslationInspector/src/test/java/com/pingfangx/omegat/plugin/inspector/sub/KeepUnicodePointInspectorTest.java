@@ -20,5 +20,13 @@ public class KeepUnicodePointInspectorTest extends BaseInspectorTest {
         addTestCase("U+0000", "U+ 0000", "U+0000");
         addTestCase("U+0000", "U+0000", "U+0000");
         addTestCase("U+0000U+FfFf", "U + 0000U + FfFf", "U+0000U+FfFf");
+        //前后空格
+        addTestCase("Test U+0000.", "测试U +0000。", "测试 U+0000。");
+
+        addTestCase("\\u0000", "\\ u0000", "\\u0000");
+        addTestCase("\\u0000", "\\u 0000", "\\u0000");
+        addTestCase("\\u0000", "\\u0000", "\\u0000");
+        addTestCase("\\u0000\\uFfFf", "\\ u 0000\\ u FfFf", "\\u0000\\uFfFf");
+        addTestCase("Test \\u0000.", "测试\\u 0000。", "测试 \\u0000。");
     }
 }
