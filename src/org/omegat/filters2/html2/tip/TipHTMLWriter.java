@@ -89,6 +89,20 @@ public class TipHTMLWriter extends HTMLWriter {
                 contents = matcherBody.replaceFirst(matcherBody.group() + addTitle);
             }
         }
+        contents = addAboutTranslation(contents);
+        return contents;
+    }
+
+    /**
+     * 添加关于汉化
+     */
+    private String addAboutTranslation(String contents) {
+        String url = "https://www.pingfangx.com/xx/translation";
+        // Java Tutorial
+        url += "/java_tutorial";
+        String text = "关于汉化";
+        String aboutTranslation = String.format("<a href=\"%s\">%s</a>", url, text);
+        contents = contents.replaceFirst("(Your Privacy Rights</a>)(</p>)", String.format("$1 | %s$2", aboutTranslation));
         return contents;
     }
 }
