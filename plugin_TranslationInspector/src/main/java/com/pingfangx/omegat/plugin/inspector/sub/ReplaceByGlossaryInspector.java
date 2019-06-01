@@ -7,6 +7,8 @@ import org.omegat.gui.glossary.IGlossaries;
 import org.omegat.util.StringUtil;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 规范 1.2
@@ -95,7 +97,8 @@ public class ReplaceByGlossaryInspector extends BaseInspector {
         String commentText = glossaryEntry.getCommentText();
         if (!StringUtil.isEmpty(commentText) && commentText.contains("|")) {
             //包含 | 才认为有不使用的翻译，否则认为是纯注释
-            String[] comments = commentText.split("\\|")[0].split(",");
+            //因为正则可能包含 | 取最后一个
+            String[] comments = commentText.substring(0, commentText.lastIndexOf("|")).split(",");
             //包含单词 srcText
             for (String comment : comments) {
                 if (StringUtil.isEmpty(comment)) {
@@ -113,6 +116,14 @@ public class ReplaceByGlossaryInspector extends BaseInspector {
                     System.out.println(String.format("术语检查：\n【%s】\n【%s】→【%s】", cn, comment, firstCnWord));
                     cn = cn.replace(comment, firstCnWord);
                     hasTranslation = true;
+                }
+                //添加正则支持，一般正则不会直接存在于译文中，所以前面的查找替换也保留
+                Matcher matcher = Pattern.compile(comment).matcher(cn);
+                if (matcher.find()) {
+                    //不完整，因为 replaceAll 可能替换别的情况
+                    String find = matcher.group();
+                    cn = matcher.replaceAll(firstCnWord);
+                    System.out.println(String.format("术语检查：\n【%s】\n【%s】：【%s】→【%s】", cn, comment, find, firstCnWord));
                 }
             }
         }
