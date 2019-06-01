@@ -23,7 +23,8 @@ public class RegexUtils {
 
     public static String replaceCurrentMatch(Matcher matcher, String replacement, boolean autoEscape) {
         if (autoEscape) {
-            replacement = replacement.replace("\\", "\\\\");
+            replacement = replacement.replace("\\", "\\\\")
+                    .replace("$", "\\$");
         }
         StringBuffer sb = new StringBuffer();
         matcher.appendReplacement(sb, replacement);
